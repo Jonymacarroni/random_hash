@@ -1,0 +1,21 @@
+name: Test Random Hash
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: pip install --upgrade pip
+
+      - name: Run random_hash.py
+        run: python random_hash.py
